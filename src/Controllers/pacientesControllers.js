@@ -24,7 +24,7 @@ pacientesControllers.create = (req,res) => {
 
         let pacientesobjeto = {};
 
-        if(pesofinal > 0){
+        if(pesofinal >= 0){
 
             pacientesobjeto.nombre = pacientesdatos.nombre;
             pacientesobjeto.peso = pesofinal
@@ -33,7 +33,7 @@ pacientesControllers.create = (req,res) => {
             
             peso_actual.push(pacientesobjeto);
 
-        }else if(pesofinal < 0){
+        }else if(pesofinal <= 0){
 
             pacientesobjeto.nombre = pacientesdatos.nombre;
             pacientesobjeto.peso= pesofinal
@@ -45,14 +45,10 @@ pacientesControllers.create = (req,res) => {
         }
 
         
-        res.json(peso_actual);
-        
     }
 
+    res.json(peso_actual);
 
-        
-
-   
     
 };
 
